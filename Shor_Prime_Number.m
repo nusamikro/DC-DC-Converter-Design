@@ -1,8 +1,17 @@
 
 % 
-% ==========================================================
-%    SHOR Algorithm
-% ==========================================================
+% ==============================================================
+%  Penggunaan Algoritma SHOR untuk Penentuan Bilangan Prima
+%  -------------------------------------------------------------
+%  Meinggunakan Menambahkan ToolBox Quantum-Computing 
+%  pada Software MATLAB Desktop / Laptop anda
+%  ( yang sudah saya coba : Versi 2025a atau 2025-B
+% --------------------------------------------------------------
+%  Contoh Program yang telah tersedia (saya salin di bawaah ini)
+%  < https://tinyurl.com/3yxrau3j >
+% --------------------------------------------------------------
+%                    Bandung 22 Nopember 2025 
+% ==============================================================
 %
 function cg = cswapGate(control,target1,target2)
   gates = [cxGate(3,2); ccxGate(1,2,3); cxGate(3,2)];
@@ -110,10 +119,8 @@ aList = findCoprime(N);
 a = aList(3)
 %
 %
-%
 n = 4;
 m = ceil(log2(N-1));
-%
 %
 %
 UfQPE = [];
@@ -122,7 +129,6 @@ for k = 0:n-1
                           [n-k (n+1):(n+m)]);
   UfQPE = [UfQPE; Ua_2tok];
 end
-%
 %
 %
 gates = [hGate(1:n); xGate(n+m)];
